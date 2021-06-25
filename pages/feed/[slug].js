@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import styles from '../../styles/Feed.module.css'
 import { Toolbar } from '../../components/toolbar'
+import Image from 'next/image'
 
 export const Feed = ({ pageNumber, articles }) => {
   const router = useRouter()
@@ -14,7 +15,7 @@ export const Feed = ({ pageNumber, articles }) => {
               {article.title}
             </h1>
             <p>{article.description}</p>
-            {article.urlToImage && <img src={article.urlToImage} alt='' />}
+            {article.urlToImage && <Image src={article.urlToImage} alt='' />}
           </div>
         ))}
       </div>
